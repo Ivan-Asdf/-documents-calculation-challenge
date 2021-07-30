@@ -8,3 +8,7 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+public/favicon.ico
+public/asset-manifest.json
+public/static
+templates
