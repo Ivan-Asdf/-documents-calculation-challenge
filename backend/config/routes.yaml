@@ -1,3 +1,7 @@
 index:
    path: /
    controller: App\Controller\FrontendController::index
+
+api:
+   path: /api/invoice
+   controller: App\Controller\ApiController::invoice

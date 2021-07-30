@@ -43,7 +43,7 @@ function App() {
 
     // get output_currency
     let outputCurrency = e.target.querySelector("[name=output_currency]").value;
-    requestData["output_curreny"] = outputCurrency;
+    requestData["output_currency"] = outputCurrency;
     // get vat_number
     let vatNumber = e.target.querySelector("[name=vat_number]").value;
     requestData["vat_number"] = vatNumber;
@@ -59,18 +59,23 @@ function App() {
       method: "POST",
       body: JSON.stringify(requestData, null, 2),
     })
+    // get response
     .then((response) => {
       if (response.status !== 200)
         console.log("ERROR: http status:", response.status)
       else {
-        // Handle response
+        return response.text();
       }
+    })
+    // modify state for result
+    .then((text) => {
+      let result = document.body.querySelector("#result")
+      result.textContent = text;
     })
     .catch((e) => {
       console.log("ERROR:", e)
     })
-    // get response
-    // modify state for result
+
   }
 
   return (
@@ -90,11 +95,12 @@ function App() {
         <OutputCurrency currencies={currencies} />
         <VatNumber vatNumbers={vatNumbers} />
         <div>
-          <input type="submit"></input>
+          <input type="submit" value="Submit"></input>
         </div>
       </form>
       <div>
         <h3>Result: </h3>
+        <textarea id="result"></textarea>
       </div>
     </div>
   );
