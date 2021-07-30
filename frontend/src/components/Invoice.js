@@ -52,6 +52,8 @@ export default function Invoice(props) {
         }
       }
     }
+    // Set data back in App.js
+    props.dataCallback(data)
 
     // Set vat numbers
     let vatNumbers = new Set();

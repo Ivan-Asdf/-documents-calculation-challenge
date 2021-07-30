@@ -5,7 +5,7 @@ import OutputCurrencyOption from "./OutputCurrencyOption";
 export default function OutputCurrency(props) {
   let options;
   if (props.currencies) {
-    options = props.currencies.map((currency) => (
+    options = Object.keys(props.currencies).map((currency) => (
       <OutputCurrencyOption currency={currency} key={currency} />
     ));
   }

@@ -4,14 +4,14 @@ import VatNumberOption from "./VatNumberOption";
 
 export default function VatNumber(props) {
   let options;
-  if (props.vat_numbers) {
-    options = props.vat_numbers.map((vat_number) => (
-      <VatNumberOption vat_number={vat_number} key={vat_number} />
+  if (props.vatNumbers) {
+    options = props.vatNumbers.map((vatNumber) => (
+      <VatNumberOption vatNumber={vatNumber} key={vatNumber} />
     ));
   }
   return (
     <div>
-      <h3>Vat Number:</h3>
+      <h3>Vat Number(Optional):</h3>
       <select name="vat_number">
         <option>None</option>
         {options}
