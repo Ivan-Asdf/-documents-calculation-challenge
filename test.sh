@@ -1,2 +1,2 @@
 cd backend
-php ./vendor/bin/phpunit src/tests/AppTest.php
+php ./vendor/bin/phpunit tests/AppTest.php

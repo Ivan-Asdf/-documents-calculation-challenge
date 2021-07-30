@@ -1,5 +1,6 @@
 <?php
 
+// I dont know how to setup autoloading for tests
 require "src/App/InvoiceHandler.php";
 
 use App\InvoiceHandler;
